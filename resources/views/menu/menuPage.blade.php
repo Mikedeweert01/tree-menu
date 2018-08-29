@@ -2,23 +2,21 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 <script src="../js/menuPage.js"></script>
 <script>
-    function getMenuItems()
+    function createSelectBox()
     {
-        let items = $('#div-menu li');
         let selectbox = $("<select>");
         $(selectbox).attr("id", "SelectBox");
-        if($("#"+SelectBox).length){
-            return;
-        }
-        {
-            $.each(items, function(key, value) {
-                console.log(value);
-                let option = $("<option>");
-                $(option).html($(value).html());
-                $(selectbox).append(option);
-            });
-            $("#selectTd").append(selectbox);
-        }
+        $("#selectTd").append(selectbox);
+    }
+    function fillOption()
+    {
+        let items = $('#div-menu li');
+        $.each(items, function(key, value) {
+            console.log(value);
+            let option = $("<option>");
+            $(option).html($(value).html());
+            $("#SelectBox").append(option);
+        });
     }
 
 </script>
@@ -48,5 +46,6 @@
 </div>
 <script>
     buildMenu();
-    getMenuItems();
+    createSelectBox();
+    fillOption();
 </script>

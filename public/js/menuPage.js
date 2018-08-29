@@ -26,7 +26,7 @@ function addItem()
         ul.append($("<li>").html(newItem).attr("id", newItem));
 
         $("#"+parentItem).append(ul);
-        getMenuItems();
+        fillOption();
     }
 }
 function deleteItem()
