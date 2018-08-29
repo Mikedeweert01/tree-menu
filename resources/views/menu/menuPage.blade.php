@@ -2,23 +2,28 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 <script src="../js/menuPage.js"></script>
 <script>
-    function createSelectBox()
-    {
-        let selectbox = $("<select>");
-        $(selectbox).attr("id", "SelectBox");
-        $("#selectTd").append(selectbox);
-    }
-    function fillOption()
-    {
-        let items = $('#div-menu li');
-        $.each(items, function(key, value) {
-            console.log(value);
-            let option = $("<option>");
-            $(option).html($(value).html());
-            $("#SelectBox").append(option);
-        });
+
+    function createSelectBox() {
+        // Create a selectbox and put it into the placeholder "#selectId"
+        $("#selectTd").html($("<select>", { id: "SelectBox" }));
+
+        // Fill the selectbox with options
+        fillSelectbox();
     }
 
+    function fillSelectbox()
+    {
+        // Grab all the items inside the menu container.
+        let items = $('#div-menu li');
+
+        // Loop through all the menu items inside the menu
+        $.each(items, function(key, value) {
+            console.log(value);
+            $("#SelectBox").append(
+                $("<option>").html($(value).html())
+            );
+        });
+    }
 </script>
 <div class="container mt-5">
     <div id="div-menu" style="float: left;">
@@ -26,6 +31,7 @@
     <div  style="float: right;">
         <table>
             <tr>
+                <!-- Empty placeholder for selectbox containing the tree menu items -->
                 <td id="selectTd"></td>
                 <td><input type="text" id="del-item" placeholder="Delete Item"></td>
             </tr>
@@ -47,5 +53,4 @@
 <script>
     buildMenu();
     createSelectBox();
-    fillOption();
 </script>

@@ -26,7 +26,9 @@ function addItem()
         ul.append($("<li>").html(newItem).attr("id", newItem));
 
         $("#"+parentItem).append(ul);
-        fillOption();
+
+        // Recreate the selectbox to update the items.
+        createSelectBox();
     }
 }
 function deleteItem()
