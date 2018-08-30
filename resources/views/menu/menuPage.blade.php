@@ -3,27 +3,30 @@
 <script src="../js/menuPage.js"></script>
 <script>
 
-    function createSelectBox() {
-        // Create a selectbox and put it into the placeholder "#selectId"
-        $("#selectTd").html($("<select>", { id: "SelectBox" }));
-
-        // Fill the selectbox with options
-        fillSelectbox();
-    }
-
-    function fillSelectbox()
-    {
-        // Grab all the items inside the menu container.
-        let items = $('#div-menu li');
-
-        // Loop through all the menu items inside the menu
-        $.each(items, function(key, value) {
-            console.log(value);
-            $("#SelectBox").append(
-                $("<option>").html($(value).html())
-            );
-        });
-    }
+    // function createSelectBox() {
+    //     // Create a selectbox and put it into the placeholder "#selectId"
+    //     $("#selectTd").html($("<select>", { id: "SelectBox" }));
+    //
+    //     // Fill the selectbox with options
+    //     fillSelectbox();
+    // }
+    //
+    // function fillSelectbox()
+    // {
+    //     // Grab all the items inside the menu container.
+    //     let items = $('#div-menu li');
+    //
+    //     // Loop through all the menu items inside the menu
+    //     $.each(items, function(key, value) {
+    //         if($(value).children("ul").length) {
+    //             console.log($(value).children("ul"));
+    //         }
+    //         console.log(value);
+    //         $("#SelectBox").append(
+    //             $("<option>").html($(value).html())
+    //         );
+    //     });
+    // }
 </script>
 <div class="container mt-5">
     <div id="div-menu" style="float: left;">
@@ -32,7 +35,7 @@
         <table>
             <tr>
                 <!-- Empty placeholder for selectbox containing the tree menu items -->
-                <td id="selectTd"></td>
+                <td><input type="text" id="root-item" placeholder="Root"></td>
                 <td><input type="text" id="del-item" placeholder="Delete Item"></td>
             </tr>
             <tr>
@@ -52,5 +55,4 @@
 </div>
 <script>
     buildMenu();
-    createSelectBox();
 </script>

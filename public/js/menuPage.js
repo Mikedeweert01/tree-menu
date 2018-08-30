@@ -2,17 +2,18 @@ function buildMenu()
 {
     let menu = $("#div-menu");
 
-    let ul = $("<ul>");
+    let ul = $("<ul>").attr("id", "ulMenu");
 
-    ul.append($("<li>").html("item1").attr("id", "item1"))
-    ul.append($("<li>").html("item2").attr("id", "item2"))
+    // standard menu build
+
+    ul.append($("<li>").html("Home").attr("id", "Home"));
+    ul.append($("<li>").html("Contact").attr("id", "Contact"));
 
     menu.append(ul);
 }
 function addItem()
 {
-
-    let parentItem = $("#SelectBox").val();
+    let rootItem = $("#root-item").val();
     let newItem = $("#new-item").val();
 
     if($("#"+newItem).length)
@@ -21,26 +22,36 @@ function addItem()
     }
     else
     {
-        let ul = $("<ul>");
+        if(newItem.indexOf('.') != -1){
+            alert("Punten worden niet geaccepteerd.");
+        }
+        else{
+            if(!(rootItem))
+            {
+                let ul = $("#ulMenu");
 
-        ul.append($("<li>").html(newItem).attr("id", newItem));
+                ul.append($("<li>").html(newItem).attr("id", newItem));
 
-        $("#"+parentItem).append(ul);
+            }
+            else{
+                let ul = $("<ul>");
 
-        // Recreate the selectbox to update the items.
-        createSelectBox();
+                ul.append($("<li>").html(newItem).attr("id", newItem));
+
+                $("#"+rootItem).append(ul);
+            }
+        }
     }
 }
 function deleteItem()
 {
-    let item = $("#del-item");
-    let itemName = item.val();
+    let item = $("#del-item").val();
 
-    if ($("#"+itemName+" li").length >= 1) {
+    if ($("#"+item+" li").length >= 1) {
         alert("Menu item heeft nog subItems. Verwijder deze eerst!");
     }
     else
     {
-        $("#"+itemName).remove();
+        $("#"+item).remove();
     }
 }

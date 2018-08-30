@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d5bca48e56bbf3a25645858fcab9c285",
+    "content-hash": "502469df7ae79cb61472ee05d7d0300a",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -367,6 +367,53 @@
             "time": "2018-02-07T20:20:57+00:00"
         },
         {
+            "name": "jadjoubran/laravel-angular",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jadjoubran/laravel-angular.git",
+                "reference": "e402f5d4477481095ac98aaf51544064bf808e5b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jadjoubran/laravel-angular/zipball/e402f5d4477481095ac98aaf51544064bf808e5b",
+                "reference": "e402f5d4477481095ac98aaf51544064bf808e5b",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^5.1",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "illuminate/support": "^5.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Jadjoubran\\LaravelAngular\\Provider\\LaravelServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jadjoubran\\LaravelAngular\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jad Joubran",
+                    "email": "joubran.jad@gmail.com"
+                }
+            ],
+            "description": "Laravel & Angular package",
+            "time": "2017-12-17T11:41:06+00:00"
+        },
+        {
             "name": "jakub-onderka/php-console-color",
             "version": "0.1",
             "source": {
@@ -654,6 +701,46 @@
                 "psysh"
             ],
             "time": "2018-05-17T13:42:07+00:00"
+        },
+        {
+            "name": "laravelangular/generators",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jadjoubran/laravel-ng-artisan-generators.git",
+                "reference": "69cf3b5cc9ca0c1698c013337b02e0b6deb929cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jadjoubran/laravel-ng-artisan-generators/zipball/69cf3b5cc9ca0c1698c013337b02e0b6deb929cc",
+                "reference": "69cf3b5cc9ca0c1698c013337b02e0b6deb929cc",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.* || 5.6.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LaravelAngular\\Generators\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jad Joubran",
+                    "email": "joubran.jad@gmail.com"
+                },
+                {
+                    "name": "Alessandro Rovito",
+                    "email": "alessandro.rovito@gmail.com"
+                }
+            ],
+            "description": "Angular generators for Artisan",
+            "time": "2018-08-20T19:09:48+00:00"
         },
         {
             "name": "league/flysystem",
